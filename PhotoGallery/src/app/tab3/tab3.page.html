@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Info
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <ion-card>
+      <ion-item href="#" class="ion-activated">
+        <ion-icon name="logo-android" slot="start"></ion-icon>
+        <ion-label>{{this.infoService.info.os}}</ion-label>
+      </ion-item>
+      
+      <ion-item>
+        <ion-icon name="walk" slot="start"></ion-icon>
+        <ion-label>{{this.infoService.info.model}}</ion-label>
+      </ion-item>
+
+      <ion-item href="#">
+        <ion-icon name="laptop-outline" slot="start"></ion-icon>
+        <ion-label>{{this.infoService.info.platform}}</ion-label>
+      </ion-item>
+
+      <ion-item class="ion-activated">
+          <ion-icon name="battery-half-outline" slot="start"></ion-icon>
+          <ion-label>{{this.infoService.info.battery}}</ion-label>
+      </ion-item>
+    </ion-card>
+
+    <ion-list-header>Info</ion-list-header>
+    <ion-chip color="primary">
+      <ion-icon name="logo-android"></ion-icon>
+      <ion-label>{{this.infoService.info.os}}</ion-label>
+    </ion-chip>
+    <ion-chip color="success">
+      <ion-icon name="laptop-outline"></ion-icon>
+      <ion-label>{{this.infoService.info.platform}}</ion-label>
+    </ion-chip>
+    <ion-chip color="warning">
+      <ion-icon name="battery-half-outline"></ion-icon>
+      <ion-label>{{this.infoService.info.battery}}</ion-label>
+    </ion-chip>
+
+    <ion-list-header>Geolocation</ion-list-header>
+    <ion-icon name="walk" slot="start"></ion-icon>
+    <ion-chip color="danger">
+      <ion-icon name="earth"></ion-icon>
+      <ion-label>{{this.infoService.info.latitude}}</ion-label>
+    </ion-chip>
+    <ion-chip color="success">
+      <ion-icon name="earth"></ion-icon>
+      <ion-label>{{this.infoService.info.longitude}}</ion-label>
+    </ion-chip>
+
+    <ion-button color="light">
+      <ion-icon name="battery-half-outline"></ion-icon>
+      <ion-badge color="light">{{this.infoService.info.battery}}</ion-badge>
+    </ion-button>
+
+</ion-content>

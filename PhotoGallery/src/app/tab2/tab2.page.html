@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+    Photo Gallery
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" *ngFor="let photo of photoService.photos; index as idx">
+        <ion-item-sliding>
+          <ion-item>
+            <ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}"></ion-img>
+          </ion-item>
+        <ion-item-options>
+          <ion-button color="danger" (click)="photoService.deletePhoto(idx)">
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-button>
+        </ion-item-options>
+        </ion-item-sliding>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button color="dark" (click)="photoService.addToGallery()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
